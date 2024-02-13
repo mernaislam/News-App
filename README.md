@@ -4,7 +4,7 @@ This is a simple flutter app that uses **APIs** to get news for different catego
 ## Screenshots
 
 ### Home page:
-This page uses custom scroll view to enable scrolling the whole screen including the categories listwiew
+This page uses custom scroll view to enable scrolling the whole screen including the categories listview
 
 <img src="https://github.com/mernaislam/News-App/assets/101946404/eff89330-5c27-4668-8bdb-5de7cd90ea7b" alt="news app home screen" width="200"/>
 
