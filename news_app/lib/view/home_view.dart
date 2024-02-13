@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/data/category_data.dart';
-import 'package:news_app/model/category_model.dart';
-import 'package:news_app/widget/category_container.dart';
+import 'package:news_app/widget/categories_list_view.dart';
+import 'package:news_app/widget/news_list_builder.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    List<CategoryModel> catList = categoryList;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -28,11 +26,20 @@ class HomeView extends StatelessWidget {
           ],
         ),
       ),
-      body: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: catList.length,
-        itemBuilder: (context, index) => CategoryContainer(
-          categoryModel: catList[index],
+      body: const Padding(
+        padding: EdgeInsets.all(22.0),
+        child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
+              child: CategoriesListView(),
+            ),
+            SliverToBoxAdapter(
+              child: SizedBox(
+                height: 30,
+              ),
+            ),
+            NewsListViewBuilder(category:'general'),
+          ],
         ),
       ),
     );
